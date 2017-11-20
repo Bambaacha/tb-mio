@@ -8,5 +8,8 @@
 	<div class="menu">
 		<?php include '../menuBar/menuBar.php'; ?>
 	</div>
+	<div class="container-fluid">
+		<table></table>
+	</div>
 </body>
 </html>
