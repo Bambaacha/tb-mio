@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><a href="#"><span class="glyphicon glyphicon-pencil"></span></a></span>
-					<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+					<input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 				</div>
 			</div>
 		</div>
