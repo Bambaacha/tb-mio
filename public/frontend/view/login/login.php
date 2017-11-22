@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="menu">
-		<?php include '../menuBar/menuBar.php'; ?>
+		<?php include '../standardHTML/menuBar.php'; ?>
 	</div>
 	<div class="container-fluid">
 		<div class="form-group">

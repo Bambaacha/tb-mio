@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="menu">
-		<?php include '../menuBar/menuBar.php'; ?>
+		<?php include '../standardHTML/menuBar.php'; ?>
 	</div>
 	<div class="container-fluid">
 		<div class="form-group">
@@ -30,6 +30,12 @@
 			<label for="price">Price:</label>
 			<input type="text" class="form-control" id="price">
 		</div>
+		<?php
+			if("category exist") //@todo
+			{
+				echo "table";
+			}
+		?>
 	</div>
 </body>
 </html>
