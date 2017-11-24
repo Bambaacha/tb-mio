@@ -6,9 +6,7 @@
 	<title>Add Article</title>
 </head>
 <body>
-	<div class="menu">
-		<?php include '../standardHTML/menuBar.php'; ?>
-	</div>
+	<?php include '../standardHTML/menuBar.php'; ?>
 	<div class="container-fluid">
 		<div class="form-group">
 			<label for="sku">SKU:</label>
@@ -30,10 +28,11 @@
 			<label for="price">Price:</label>
 			<input type="text" class="form-control" id="price">
 		</div>
+		<button class="btn btn-inverse" id="addArticle">Add Article</button>
 		<?php
 			if("category exist") //@todo
 			{
-				echo "table";
+				//echo "table";
 			}
 		?>
 	</div>
