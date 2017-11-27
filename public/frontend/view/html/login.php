@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<title>Login</title>
 </head>
 <body>
 	<div class="menu">
-		<?php include '../standardHTML/menuBar.php'; ?>
+		<?php include 'menuBar.php'; ?>
 	</div>
 	<div class="container-fluid">
 		<div class="form-group">

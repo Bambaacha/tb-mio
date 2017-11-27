@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="allCategories.css">
+	<link rel="stylesheet" type="text/css" href="../css/allArticles.css">
 	<meta charset="UTF-8">
-	<title>Kategorien</title>
+	<title>Artikeln</title>
 </head>
 <body>
-	<?php include '../standardHTML/menuBar.php'; ?>
+	<?php include 'menuBar.php'; ?>
 	<div class="container-fluid">
 		<div class="row" id="header">
-			<h3>Alle eingetragene Kategorien</h3>
+			<h3>Alle eingetragene Artikel</h3>
 		</div>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Kategorien</th>
-					<th>Zugewiesene Artikel</th>
+					<th>SKU</th>
+					<th>EAN</th>
+					<th>Name</th>
+					<th>Stock</th>
+					<th>Price</th>
+					<th>Categorie</th>
 				</tr>
 			</thead>
 			<tbody> <?php //@todo ?>
