@@ -22,12 +22,17 @@
 					<th>Categorie</th>
 				</tr>
 			</thead>
-			<tbody> <?php //@todo ?>
-				<!-- <tr>
-					<td>John</td>
-					<td>Doe</td>
-					<td>john@example.com</td>
-				</tr> -->
+			<tbody>
+			<?php
+				include '../../../backend/allArticles.php';
+				foreach ($articles as $article){
+					echo "<tr><td>".$article->SKU."</td>
+							<td>".$article->EAN."</td>
+							<td>".$article->Name."</td>
+							<td>".$article->Stock."</td>
+							<td>".$article->Price."</td></tr>";
+				}
+			?>
 			</tbody>
 		</table>
 	</div>

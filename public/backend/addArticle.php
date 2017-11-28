@@ -5,35 +5,46 @@
  * Date: 20.11.17
  * Time: 10:34
  */
-if (!isset($_POST['addArticle'])) {
-	if(intval($_POST['sku'] && intval($_POST['ean']) && intval($_POST['stockQuantity'] && intval($_POST['price'])))) {
+if (isset($_POST['addArticle']))
+{
+	if(intval($_POST['sku'] && intval($_POST['ean']) && intval($_POST['stockQuantity'] && intval($_POST['price']))))
+	{
 		$sku = $_POST['sku'];
 		$ean = $_POST['ean'];
 		$stockQuantity = $_POST['stockQuantity'];
 		$price = $_POST['price'];
-	} else {
-		//todo
 	}
-	if(is_string($_POST['name'])) {
+	else
+	{
+		echo "<p>Please add only numbers in the inputs SKU, EAN, Stock Quantity and Price</p>";
+	}
+	if(is_string($_POST['name']))
+	{
 		$name = $_POST['name'];
-	} else {
+	}
+	else
+	{
 		//todo
 	}
 
-	$conn = new mysqli("localhost", "root", "root", "scotchbox");
+	include 'connection.php';
 
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
+	if(startConnection()->connect_error)
+	{
+		die("Connection failed: ".startConnection()->connect_error);
 	}
 
 	$sql = "INSERT INTO articles (SKU, EAN, name, stock, price)
 	VALUES ($sku, $ean, '$name', $stockQuantity, $price)";
 
-	if ($conn->query($sql) === TRUE) {
-		echo "<p>New record created successfully</p>";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
+	if(startConnection()->query($sql) === true)
+	{
+		echo "<div class='row'><h2>New record created successfully</h2></div>";
+	}
+	else
+	{
+		echo "Error: ".$sql."<br>".startConnection()->error;
 	}
 
-	$conn->close();
+	startConnection()->close();
 }

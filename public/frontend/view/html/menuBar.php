@@ -11,11 +11,11 @@
 			</div>
 			<ul class="nav navbar-nav">
 			  <li class="active"><a href="#">Home</a></li>
-			  <li><a href="#">Kategorien</a></li>
-			  <li><a href="#">Kategorie Hinzufügen</a></li>
-			  <li><a href="#">Artikel</a></li>
-			  <li><a href="#">Artikel Hinzufügen</a></li>
-			  <li><a href="#">Bearbeiten</a></li>
+			  <li><a href="allCategories.php">Kategorien</a></li>
+			  <li><a href="addCategorie.php">Kategorie Hinzufügen</a></li>
+			  <li><a href="allArticles.php">Artikeln</a></li>
+			  <li><a href="addArticle.php">Artikel Hinzufügen</a></li>
+			  <li><a href="edit.php">Bearbeiten</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

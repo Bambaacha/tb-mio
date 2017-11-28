@@ -29,11 +29,10 @@
 				<label for="price">Price:</label>
 				<input type="text" class="form-control" id="price" name="price">
 			</div>
-			<button class="btn btn-inverse" id="addArticle">Add Article</button>
+			<button class="btn btn-inverse" id="addArticle" name="addArticle">Add Article</button>
 		</form>
 		<?php
 			include '../../../backend/addArticle.php';
-
 			if("category exist") //@todo
 			{
 				//echo "table";
