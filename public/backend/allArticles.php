@@ -14,16 +14,35 @@ $articles = array();
 
 if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $article = (object) [
-			'SKU' => $row["SKU"],
-			'EAN' => $row["EAN"],
-			'Name' => $row["name"],
-			'Stock' => $row["stock"],
-			'Price' => $row["price"]
-		];
-        $articles[] = $article;
-    }
+
+	if(!empty($row['Category'])) {
+
+		while($row = $result->fetch_assoc())
+		{
+			$article = (object)[
+				'SKU' => $row["SKU"],
+				'EAN' => $row["EAN"],
+				'Name' => $row["name"],
+				'Stock' => $row["stock"],
+				'Price' => $row["price"],
+				'Categorie' => [$row['categorie']]
+			];
+			$articles[] = $article;
+		}
+	} else {
+		while($row = $result->fetch_assoc())
+		{
+			$article = (object)[
+				'SKU' => $row["SKU"],
+				'EAN' => $row["EAN"],
+				'Name' => $row["name"],
+				'Stock' => $row["stock"],
+				'Price' => $row["price"],
+				'Categorie' => 'None'
+			];
+			$articles[] = $article;
+		}
+	}
 } else {
     echo "0 results";
 }

@@ -18,12 +18,13 @@
 					<th>Zugewiesene Artikel</th>
 				</tr>
 			</thead>
-			<tbody> <?php //@todo ?>
-				<!-- <tr>
-					<td>John</td>
-					<td>Doe</td>
-					<td>john@example.com</td>
-				</tr> -->
+			<tbody>
+			<?php //@todo
+				include '../../../backend/allCategories.php';
+				foreach ($categories as $category) {
+					echo "<tr><td>".$category->Kategorien."</td></tr>";
+				}
+			?>
 			</tbody>
 		</table>
 	</div>

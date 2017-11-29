@@ -30,7 +30,8 @@
 							<td>".$article->EAN."</td>
 							<td>".$article->Name."</td>
 							<td>".$article->Stock."</td>
-							<td>".$article->Price."</td></tr>";
+							<td>".$article->Price."</td>
+							<td>".$article->Categorie."</td></tr>";
 				}
 			?>
 			</tbody>

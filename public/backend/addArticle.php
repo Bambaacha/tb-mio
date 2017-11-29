@@ -7,7 +7,7 @@
  */
 if (isset($_POST['addArticle']))
 {
-	if(intval($_POST['sku'] && intval($_POST['ean']) && intval($_POST['stockQuantity'] && intval($_POST['price']))))
+	if(intval($_POST['sku']) && intval($_POST['ean']) && intval($_POST['stockQuantity']) && intval($_POST['price']))
 	{
 		$sku = $_POST['sku'];
 		$ean = $_POST['ean'];
@@ -39,7 +39,7 @@ if (isset($_POST['addArticle']))
 
 	if(startConnection()->query($sql) === true)
 	{
-		echo "<div class='row'><h2>New record created successfully</h2></div>";
+		echo "<p><h2>New Article has been added.</h2></p>";
 	}
 	else
 	{
