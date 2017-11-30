@@ -46,5 +46,7 @@ if (isset($_POST['addArticle']))
 		echo "Error: ".$sql."<br>".startConnection()->error;
 	}
 
-	startConnection()->close();
+	if(!function_exists('closeConnection')){
+		closeConnection();
+	}
 }

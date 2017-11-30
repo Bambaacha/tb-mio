@@ -25,7 +25,7 @@
 			<tbody>
 			<?php
 				include '../../../backend/allArticles.php';
-				foreach ($articles as $article){
+				foreach (getArticles() as $article){
 					echo "<tr><td>".$article->SKU."</td>
 							<td>".$article->EAN."</td>
 							<td>".$article->Name."</td>

@@ -21,7 +21,7 @@
 			<tbody>
 			<?php //@todo
 				include '../../../backend/allCategories.php';
-				foreach ($categories as $category) {
+				foreach (getCat() as $category) {
 					echo "<tr><td>".$category->Kategorien."</td></tr>";
 				}
 			?>

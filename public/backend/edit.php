@@ -39,3 +39,9 @@ function dumpVar($_ = null)
             echo "\n";
         }
     }
+
+include '../../../backend/allCategories.php';
+
+foreach (getCat() as $category) {
+	return $category->Kategorien;
+}

@@ -1,5 +1,4 @@
 <?php
-
 function startConnection(){
 	$conn = new mysqli("localhost", "root", "root", "scotchbox");
 
@@ -10,3 +9,6 @@ function startConnection(){
 	}
 }
 
+function closeConnection(){
+	startConnection()->close();
+}

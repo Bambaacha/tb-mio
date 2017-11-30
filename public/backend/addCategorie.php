@@ -24,5 +24,8 @@ if (isset($_POST['addCategory'])){
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 
-	startConnection()->close();
+	if(!function_exists('closeConnection')){
+		closeConnection();
+	}
 }
+
