@@ -67,7 +67,7 @@ if(isset($_POST['mappingArtCat']))
 
 									if(startConnection()->query($sql) === true)
 									{
-										echo "<p><h2>New Article has been added.</h2></p>";
+										echo "<div class='container-fluid'><p><h2>New Article with ID: ".$article->a_id." has now the category with ID: ".$category->c_id.".</h2></p></div>";
 									}
 									else
 									{

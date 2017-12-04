@@ -14,8 +14,13 @@
 	</div>
 	<form action="edit.php" method="post">
 		<div class="container-fluid">
-			<div class="row">
-				<span class="glyphicon glyphicon-search"></span>
+			<div class="col-md-5">
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> <!-- todo -->
+			</div>
+			<div class="col-md-2">
+				<button class="btn btn-inverse" id="mappingArtCat" name="mappingArtCat">Add Category</button>
+			</div>
+			<div class="col-md-5">
 				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> <!-- todo -->
 			</div>
 			<div class="col-md-6">
@@ -63,9 +68,6 @@
 					}
 					?>
 				</table>
-			</div>
-			<div class="row">
-				<button class="btn btn-inverse" id="mappingArtCat" name="mappingArtCat">Add Category</button>
 			</div>
 		</div>
 	</form>
