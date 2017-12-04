@@ -10,6 +10,9 @@ if(!function_exists('startConnection')){
 	include 'connection.php';
 }
 
+/**
+ *Funktion zieht alle Artikel aus der Datenbank
+ */
 function getArticles(){
 
 	$sql = "SELECT SKU, EAN, name, stock, price, a_id, categorie FROM articles";

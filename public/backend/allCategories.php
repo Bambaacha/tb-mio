@@ -9,6 +9,9 @@ if(!function_exists('startConnection')){
 	include 'connection.php';
 }
 
+/**
+ * Auslesen aller Kategorien von der Datenbank
+ */
 function getCat(){
 
 	$sql = "SELECT name, c_id FROM categories";

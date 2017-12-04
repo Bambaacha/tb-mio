@@ -45,6 +45,10 @@ include '../../../backend/allArticles.php';
 
 $artCount = count(getArticles());
 $catCount = count(getCat());
+
+/**
+ * Hier wird beim Artikel eine Kategorie zugewiesen
+ */
 if(isset($_POST['mappingArtCat']))
 {
 	for($i = 1; $i <= $artCount; $i++){
@@ -55,6 +59,7 @@ if(isset($_POST['mappingArtCat']))
 						if($article->a_id == $i){
 							foreach(getCat() as $category){
 								if($category->c_id == $x){
+
 									$sql = "UPDATE articles SET categorie = ( SELECT categories.name
 									FROM categories
 									WHERE c_id = '$category->c_id' ) 
@@ -76,8 +81,4 @@ if(isset($_POST['mappingArtCat']))
 			}
 		}
 	}
-}
-
-foreach (getCat() as $category) {
-	return $category->Kategorien;
 }

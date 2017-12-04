@@ -5,6 +5,7 @@
  * Date: 20.11.17
  * Time: 10:34
  */
+/** Hier werden die Artikel in der Datenbank hinzugefügt */
 if (isset($_POST['addArticle']))
 {
 	if(intval($_POST['sku']) && intval($_POST['ean']) && intval($_POST['stockQuantity']) && intval($_POST['price']))

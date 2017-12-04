@@ -1,4 +1,7 @@
 <?php
+/**
+ * Erstellung einer Verbindung mit der Datenbank
+ */
 function startConnection(){
 	$conn = new mysqli("localhost", "root", "root", "scotchbox");
 
@@ -9,6 +12,9 @@ function startConnection(){
 	}
 }
 
+/**
+ * Schließen der Verbindung mit der Datenbank
+ */
 function closeConnection(){
 	startConnection()->close();
 }

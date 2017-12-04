@@ -5,6 +5,8 @@
  * Date: 20.11.17
  * Time: 11:10
  */
+
+/** Erstellung und einfügen der Kategorien in der Datenbank */
 if (isset($_POST['addCategory'])){
 
 	if(is_string($_POST['category']) && !empty($_POST['category'])) {
