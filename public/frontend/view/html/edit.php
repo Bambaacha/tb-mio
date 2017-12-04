@@ -9,62 +9,66 @@
 	<div class="menu">
 		<?php
 		include 'menuBar.php';
+		include '../../../backend/edit.php';
 		?>
 	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<span class="glyphicon glyphicon-search"></span>
-			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> <!-- todo -->
-		</div>
-		<div class="col-md-6">
-			<table id="myTable">
-				<tr class="header">
-					<th>#</th>
-					<th style="width:60%;">Articles</th>
-				</tr>
-				<?php
-				include '../../../backend/allArticles.php';
-				foreach (getArticles() as $article) {
-					?>
-					<tr>
-						<td>
-							<label class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="<?=$article->a_id?>">
-								<span class="custom-control-indicator"></span>
-							</label>
-						</td>
-						<td><?=$article->Name?></td>
+	<form action="edit.php" method="post">
+		<div class="container-fluid">
+			<div class="row">
+				<span class="glyphicon glyphicon-search"></span>
+				<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> <!-- todo -->
+			</div>
+			<div class="col-md-6">
+				<table id="myTable">
+					<tr class="header">
+						<th>#</th>
+						<th style="width:60%;">Articles</th>
 					</tr>
 					<?php
-				}
-				?>
-			</table>
-		</div>
-		<div class="col-md-6">
-			<table id="myTable">
-				<tr class="header">
-					<th>#</th>
-					<th style="width:60%;">Categories</th>
-				</tr>
-				<?php
-				include '../../../backend/edit.php';
-				foreach (getCat() as $category) {
+					foreach (getArticles() as $article) {
+						?>
+						<tr>
+							<td>
+								<label class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="<?=$article->a_id?>" name="a_id_<?=$article->a_id?>">
+									<span class="custom-control-indicator"></span>
+								</label>
+							</td>
+							<td><?=$article->Name?></td>
+						</tr>
+						<?php
+					}
 					?>
-					<tr>
-						<td>
-							<label class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="<?=$category->c_id?>">
-								<span class="custom-control-indicator"></span>
-							</label>
-						</td>
-						<td><?=$category->Kategorien?></td>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table id="myTable">
+					<tr class="header">
+						<th>#</th>
+						<th style="width:60%;">Categories</th>
 					</tr>
 					<?php
-				}
-				?>
-			</table>
+					foreach (getCat() as $category) {
+						?>
+						<tr>
+							<td>
+								<label class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="<?=$category->c_id?>" name="c_id_<?=$category->c_id?>">
+									<span class="custom-control-indicator"></span>
+								</label>
+							</td>
+							<td><?=$category->Kategorien?></td>
+						</tr>
+						<?php
+					}
+					?>
+				</table>
+			</div>
+			<div class="row">
+				<button class="btn btn-inverse" id="mappingArtCat" name="mappingArtCat">Add Category</button>
+			</div>
 		</div>
-	</div>
+	</form>
 <script>
 	function myFunction() {
 		// Declare variables

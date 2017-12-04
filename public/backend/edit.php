@@ -41,6 +41,42 @@ function dumpVar($_ = null)
     }
 
 include '../../../backend/allCategories.php';
+include '../../../backend/allArticles.php';
+
+$artCount = count(getArticles());
+$catCount = count(getCat());
+if(isset($_POST['mappingArtCat']))
+{
+	for($i = 1; $i <= $artCount; $i++){
+		if (isset($_POST['a_id_'.$i])){
+			for($x = 1; $x <= $catCount; $x++){
+				if (isset($_POST['c_id_'.$x])){
+					foreach(getArticles() as $article){
+						if($article->a_id == $i){
+							foreach(getCat() as $category){
+								if($category->c_id == $x){
+									$sql = "UPDATE articles SET categorie = ( SELECT categories.name
+									FROM categories
+									WHERE c_id = '$category->c_id' ) 
+									WHERE a_id = '$article->a_id'";
+
+									if(startConnection()->query($sql) === true)
+									{
+										echo "<p><h2>New Article has been added.</h2></p>";
+									}
+									else
+									{
+										echo "Error: ".$sql."<br>".startConnection()->error;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 foreach (getCat() as $category) {
 	return $category->Kategorien;

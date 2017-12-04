@@ -6,21 +6,24 @@
  * Time: 10:34
  */
 
-include 'connection.php';
+if(!function_exists('startConnection')){
+	include 'connection.php';
+}
 
 function getArticles(){
 
-	$sql = "SELECT SKU, EAN, name, stock, price, a_id FROM articles";
+	$sql = "SELECT SKU, EAN, name, stock, price, a_id, categorie FROM articles";
 	$result = startConnection()->query($sql);
 
 	$articles = array();
 
-	if ($result->num_rows > 0) {
+	if ($result->num_rows > 0)
+	{
 		// output data of each row
 
-		if(!empty($row['Category'])) {
-
-			while($row = $result->fetch_assoc())
+		while($row = $result->fetch_assoc())
+		{
+			if(!empty($row['categorie']))
 			{
 				$article = (object)[
 					'SKU' => $row["SKU"],
@@ -28,21 +31,18 @@ function getArticles(){
 					'Name' => $row["name"],
 					'Stock' => $row["stock"],
 					'Price' => $row["price"],
-					'Categorie' => [$row['categorie']],
+					'Categorie' => $row['categorie'],
 					'a_id' => $row['a_id']
 				];
 				$articles[] = $article;
-			}
-		} else {
-			while($row = $result->fetch_assoc())
-			{
+			} else {
 				$article = (object)[
 					'SKU' => $row["SKU"],
 					'EAN' => $row["EAN"],
 					'Name' => $row["name"],
 					'Stock' => $row["stock"],
 					'Price' => $row["price"],
-					'Categorie' => 'None',
+					'Categorie' => ' ',
 					'a_id' => $row['a_id']
 				];
 				$articles[] = $article;
